@@ -1,0 +1,15 @@
+###
+GET http://localhost:3000/tareas
+
+###
+
+POST http://localhost:3000/tareas
+Content-Type: application/json
+
+{
+    "titulo": "tarea 2",
+    "responsable": "Ernesto"
+}
+
+###
+

@@ -1,39 +1,38 @@
-const express = require("express");
-const app = express();
-const morgan = require("morgan");
-const cors = require('cors');
-const mongoose = require("mongoose");
+/* eslint-disable no-unused-vars */
 
-const tareasRoutes = require('./routes/tareas');
+const express = require('express')
+const app = express()
+const morgan = require('morgan')
+const cors = require('cors')
 
-mongoose.connect('mongodb+srv://admin:'
-+ encodeURIComponent(process.env.MONGO_ATLAS_PW) +
-'@cluster0.dj9ya.mongodb.net/apiSkylabDatabase?retryWrites=true&w=majority')
+const tareasRoutes = require('./routes/tareas')
 
-app.use(morgan("dev"));
+require('./db')
 
-app.use(express.json());
+app.use(morgan('dev'))
+
+app.use(express.json())
 app.use(express.urlencoded({
-  extended: true
-}));
+	extended: true
+}))
 
-app.use(cors());
+app.use(cors())
 
 app.use('/tareas', tareasRoutes)
 
 app.use((req, res, next) => {
-    const error = new Error("Not found");
-    error.status = 404;
-    next(error);
-  });
-  
+	const error = new Error('Not found')
+	error.status = 404
+	next(error)
+})
+	
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    error: {
-      message: error.message,
-    },
-  });
-});
+	res.status(error.status || 500)
+	res.json({
+		error: {
+			message: error.message,
+		},
+	})
+})
 
 module.exports = app
