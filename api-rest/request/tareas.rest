@@ -7,9 +7,24 @@ POST http://localhost:3000/tareas
 Content-Type: application/json
 
 {
-    "titulo": "tarea 2",
-    "responsable": "Ernesto"
+    "titulo": "tarea 3",
+    "responsable": "Ernesto",
+	"fecha": "2021/07/04"
 }
 
 ###
 
+GET http://localhost:3000/tareas/60e0a8164815af2d7cc5bced
+
+###
+
+PATCH http://localhost:3000/tareas/60e0a8164815af2d7cc5bced
+Content-Type: application/json
+
+[
+	{ "propName": "titulo", "value": "Tarea actualizada"}
+]
+
+###
+
+DELETE http://localhost:3000/tareas/60e1e585041ec3641058d163

@@ -5,7 +5,7 @@ const app = express()
 const morgan = require('morgan')
 const cors = require('cors')
 
-const tareasRoutes = require('./routes/tareas')
+const tareasRoutes = require('./routes/tareas.routes')
 
 require('./db')
 
