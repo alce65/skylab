@@ -61,7 +61,7 @@ exports.createTarea = (req, res, next) => {
 			console.log(result)
 			res.status(201).json({
 				message: 'Tarea creada con éxito',
-				createdProduct: {
+				createdTask: {
 					titulo: result.titulo,
 					responsable: result.responsable,
 					fecha: result.fecha,

@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
-const urlConnect = process.env.MONGO_ATLAS_URI
+const { MONGO_ATLAS_URI, MONGO_ATLAS_URI_TEST, NODE_ENV} = process.env
+const urlConnect = NODE_ENV === 'testing' ?
+	MONGO_ATLAS_URI_TEST : MONGO_ATLAS_URI
+
 
 mongoose.connect(urlConnect, {
 	useNewUrlParser: true,
