@@ -5,13 +5,13 @@ const Tarea = require('../models/tarea.model')
 
 // titulo: { type: String, required: true },
 // responsable: { type: String, required: true },
-// fecha:  { type: Date, required: true },
+// fechaInicio:  { type: Date, required: true },
 // isCompleted
 
 exports.getAllTareas = (req, res, next) => {
 	const url_base = req.protocol + '://' + req.get('host') + '/tareas'
 	Tarea.find()
-		.select('titulo responsable fecha isCompleted _id')
+		.select('titulo responsable fechaInicio isCompleted _id')
 		.exec()
 		.then(docs => {
 			const response = {
@@ -20,7 +20,7 @@ exports.getAllTareas = (req, res, next) => {
 					return {
 						titulo: doc.titulo,
 						responsable: doc.responsable,
-						fecha: doc.fecha,
+						fechaInicio: doc.fechaInicio,
 						isCompleted: doc.isCompleted,
 						_id: doc._id,
 						request: {
@@ -52,7 +52,7 @@ exports.createTarea = (req, res, next) => {
 		_id: new mongoose.Types.ObjectId(),
 		titulo: req.body.titulo,
 		responsable: req.body.responsable,
-		fecha: new Date(req.body.fecha)
+		fechaInicio: new Date(req.body.fechaInicio)
 	})
 
 	tarea
@@ -64,7 +64,7 @@ exports.createTarea = (req, res, next) => {
 				createdTask: {
 					titulo: result.titulo,
 					responsable: result.responsable,
-					fecha: result.fecha,
+					fechaInicio: result.fechaInicio,
 					isCompleted: result.isCompleted,
 					_id: result._id,
 					request: {
@@ -86,7 +86,7 @@ exports.getTarea = (req, res, next) => {
 	const url_base = req.protocol + '://' + req.get('host') + '/tareas'
 	const id = req.params.tareaID
 	Tarea.findById(id)
-		.select('titulo responsable fecha isCompleted _id')
+		.select('titulo responsable fechaInicio isCompleted _id')
 		.exec()
 		.then(doc => {
 			console.log('From database', doc)

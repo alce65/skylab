@@ -9,7 +9,7 @@ Content-Type: application/json
 {
     "titulo": "tarea 3",
     "responsable": "Ernesto",
-	"fecha": "2021/07/04"
+	"fechaInicio": "2021/07/04"
 }
 
 ###

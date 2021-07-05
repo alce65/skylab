@@ -1,0 +1,25 @@
+<p class="h2">Lista</p>
+
+<skl-nueva></skl-nueva>
+
+<div class="lista">
+    <ng-container *ngIf="tareas?.length; else sinTareas" >
+        <p class="h4">Lista de tareas</p>
+        <ul>
+            <!-- <li *ngFor="let tarea of tareas; let i = index"> -->
+            <li *ngFor="let item of tareas; index as i">
+                <skl-tarea [tarea]="item"></skl-tarea>
+            </li>
+        </ul>
+    </ng-container>
+</div>
+
+<div>
+    <skl-footer></skl-footer>
+</div>
+
+<ng-template #sinTareas>
+    <p>Anímate a añadir una tarea</p>
+</ng-template>
+
+

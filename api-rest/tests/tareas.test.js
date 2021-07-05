@@ -10,19 +10,19 @@ const initialTareas = [
 		titulo: 'Aprender FullStack JavaScript',
 		responsable: 'Alejandro',
 		isComplete: true,
-		fecha: new Date()
+		fechaInicio: new Date()
 	},
 	{
 		titulo: 'Deploy Aplicación ejemplo',
 		responsable: 'Ernesto',
 		isComplete: false,
-		fecha: new Date()
+		fechaInicio: new Date()
 	},
 	{
 		titulo: 'Otras tareas',
 		responsable: 'Elena',
 		isComplete: false,
-		fecha: new Date()
+		fechaInicio: new Date()
 	}
 ]
 
@@ -63,7 +63,7 @@ describe('create a task', () => {
 			titulo: 'Nueva tarea desde POST',
 			responsable: 'Celia',
 			isComplete: false,
-			fecha: new Date()
+			fechaInicio: new Date()
 		}
 
 		const response = await api

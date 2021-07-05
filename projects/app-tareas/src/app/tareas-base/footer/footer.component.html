@@ -1,0 +1,31 @@
+<div class="filtros">
+    <span>
+        Filtros: 
+    </span>
+    <div class="form-check form-check-inline">
+        <label class="form-check-label" *ngFor="let filtro of filtros">
+            <input class="form-check-input" [formControl]="fcFiltro"
+            type="radio" name="filtros" [value]="filtro"> 
+                {{filtro}}
+        </label>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" (click)="onClickBorrarTodos(confirm)">
+        Borrar Todas
+    </button>
+</div>
+
+<ng-template #confirm let-modal>
+    <div class="modal-header">
+        <p>¿Esta seguro de que desea borrar todas las tareas?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" 
+            (click)="modal.close('Cancel')">
+            Cancelar
+        </button>
+        <button type="button" class="btn btn-outline-dark" 
+            (click)="modal.close('Confirm')">
+            Confirmar
+        </button>
+    </div>
+</ng-template>
