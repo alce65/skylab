@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+    display: flex;
+    margin: inherit;
+}
+
+a {
+    color: inherit;
+    display: block;
+    padding: 0 0.5rem;
+
+}
+
+li:not(:last-child) {
+    border-right: solid 1px;
+}
