@@ -1,0 +1,9 @@
+<span>
+    <input type="checkbox" [(ngModel)]="tarea.isCompleted" 
+        (change)="onChangeCompleted()">                    
+</span>
+<span>{{ tarea._id.slice(0,8) }}</span>
+<span [ngClass]="{completed: tarea.isCompleted}"
+>{{tarea.titulo}} | {{tarea.responsable}}</span>
+<span> {{tarea.fechaInicio | date : 'fullDate'}}</span>
+<span class="boton" (click)="onClickBorrar()">🗑</span>

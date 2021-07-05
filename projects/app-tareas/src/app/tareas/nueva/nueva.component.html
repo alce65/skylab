@@ -1,0 +1,24 @@
+<details>
+    <summary class="h4">Nueva tarea</summary>
+    <form [formGroup]="fgNewTarea" (ngSubmit)="onClickGuardar()">
+      <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input type="text"
+              class="form-control" formControlName="titulo" id="titulo" >
+      </div>
+      <div class="form-group">
+          <label for="responsable">Responsable</label>
+          <input type="text" autocomplete="nickname"
+          class="form-control" formControlName="responsable" id="responsable">
+      </div>
+      <div class="form-group">
+      <label for="fecha">Fecha de inicio</label>
+      <input type="date"
+          class="form-control" formControlName="fechaInicio" id="fecha">
+      </div>
+      <button type="submit" class="btn btn-primary"
+          [disabled]="fgNewTarea.invalid">
+          Guardar
+      </button>
+    </form>  
+</details>

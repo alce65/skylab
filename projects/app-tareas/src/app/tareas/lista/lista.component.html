@@ -1,0 +1,39 @@
+<h2>Lista</h2>
+
+<skl-nueva></skl-nueva>
+
+<div class="lista">
+    <ng-container *ngIf="tareas.length; else sinTareas" >
+        <h3>
+            <span *ngIf="allSelect" class="button"
+                (click)="selectAll(false)" title="Unselect all">⚫</span>
+            <span *ngIf="!allSelect" class="button"
+                (click)="selectAll(true)" title="Select all">🔘</span>
+            Lista de tareas
+        </h3>
+        <ul>
+            <!-- <li *ngFor="let tarea of tareas; let i = index"> -->
+            <li *ngFor="let item of tareas; index as i">
+                <skl-tarea [tarea]="item" [indice]="i"></skl-tarea>
+            </li>
+        </ul>
+    </ng-container>
+</div>
+
+<app-footer></app-footer>
+<div class="info">
+	<p>
+		Las operaciones globales (Borrar Todas, Seleccionar/Deseleccionar todas)
+		son meramente locales, para comprobar los cambios del Store en Redux.
+	</p>
+	<p>
+		No se ha implementado su reflejo en la DB Mongo
+	</p>
+
+</div>
+
+<ng-template #sinTareas>
+    <p>Anímate a añadir una tarea</p>
+</ng-template>
+
+

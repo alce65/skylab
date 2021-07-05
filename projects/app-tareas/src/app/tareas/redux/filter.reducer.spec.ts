@@ -1,0 +1,13 @@
+import { filtroReducer, initialState } from './filter.reducer';
+
+describe('Filter Reducer', () => {
+  describe('an unknown action', () => {
+    it('should return the previous state', () => {
+      const action = {} as any;
+
+      const result = filtroReducer(initialState, action);
+
+      expect(result).toBe(initialState);
+    });
+  });
+});

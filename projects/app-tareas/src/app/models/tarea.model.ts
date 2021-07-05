@@ -3,7 +3,7 @@ export interface iTarea {
     titulo: string;
     responsable: string;
     isCompleted: boolean;
-    fechaInicio?: Date | null;
+    fechaInicio: Date | null;
 	request?: any
 }
 
