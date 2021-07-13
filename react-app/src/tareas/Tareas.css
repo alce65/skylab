@@ -1,0 +1,44 @@
+.lista ul {
+    list-style: none;
+}
+
+.tarea {
+    display: block;
+    border: 1px solid gray;
+    padding: 0.2rem;
+}
+
+.tarea .boton {
+    cursor: pointer;
+}
+
+.tarea .completed {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.tarea span {
+    padding: 0.5rem;; 
+}
+
+.tarea .nueva{
+    display: block;
+    border: 2px solid gainsboro;
+    padding: 0.5rem
+}
+
+
+.footer{
+    display: block;
+    border: 2px solid gainsboro;
+    padding: 0.5rem
+}
+
+.footer .filtros  span {
+	font-weight: 700;
+	padding-right: 0.5rem;
+}
+
+.footer .filtros .form-check-label {
+	padding: 0.5rem;
+} 
